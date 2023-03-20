@@ -1,8 +1,7 @@
 package utilities;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+import java.io.*;
+import java.util.*;
 
 public class ConfigurationReader {
     //1- Create the object of Properties
@@ -22,7 +21,7 @@ public class ConfigurationReader {
             file.close();
 
 
-        } catch (IOException e) {
+        } catch (IOException e ) {
             System.out.println("File not found in the ConfigurationReader class.");
             e.printStackTrace();
         }
