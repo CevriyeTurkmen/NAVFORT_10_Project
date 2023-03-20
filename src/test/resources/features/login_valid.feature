@@ -18,4 +18,3 @@ Feature: Login with valid credentials
       | usertype | salesmanager101 | UserUser123 | Dashboard       |
       | usertype | storemanager51  | UserUser123 | Dashboard       |
 
-
