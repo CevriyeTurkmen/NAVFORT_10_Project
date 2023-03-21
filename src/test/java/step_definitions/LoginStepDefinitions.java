@@ -65,32 +65,43 @@ public class LoginStepDefinitions {
         loginPage.submitBtn.click();
     }
 
+
+    @Then("warning {string} should be displayed")
+    public void warningShouldBeDisplayed(String message) throws InterruptedException {
+
+        Thread.sleep(3000);
+
+        String expected1 = message;
+        String actual1 = loginPage.message.getText();
+        Assert.assertEquals(expected1, actual1);
+
+    }
+
     @Then("warning message should be displayed")
-    public void warningMessageShouldBeDisplayed() {
+    public void warningMessageShouldBeDisplayed() throws InterruptedException {
+        Thread.sleep(3000);
         String exp = "Please fill in this field.";
         String act = Driver.getDriver().findElement(By.name("_username")).getAttribute("validationMessage");
         Assert.assertEquals(exp, act);
 
     }
 
-    @Then("warning {string} should be displayed")
-    public void warningShouldBeDisplayed(String message) throws InterruptedException {
+    @Then("warning different message should be displayed")
+    public void warningDifferentMessageShouldBeDisplayed() throws InterruptedException {
+
         Thread.sleep(3000);
-
-        String expected1 = message;
-        String actual1 = Driver.getDriver().findElement(By.name("_password")).getAttribute("validationMessage");
-        Assert.assertEquals(expected1, actual1);
-
+        String exp = "Please fill in this field.";
+        String act = Driver.getDriver().findElement(By.name("_password")).getAttribute("validationMessage");
+        Assert.assertEquals(exp, act);
     }
 
-    @Then("user sees on his own {string}")
-    public void userSeesOnHisOwn(String username) throws InterruptedException {
+    @Then("user displays on his own {string}")
+    public void userDisplaysOnHisOwn(String username) throws InterruptedException {
 
        Browser_Util.waitForVisibility(loginPage.profile, 5);
-      String expectedProfile = username;
+       String expectedProfile = username;
        String actualProfile = loginPage.profile.getText();
         Assert.assertEquals(expectedProfile, actualProfile);
-
 
     }
 

@@ -1,10 +1,10 @@
-Feature: Navport application login test
+Feature: Navfort_E10 login test
 
   Background:
     Given user is on the login page
 
-
-  Scenario Outline:Log in as a <usertype>
+  @NAV10-274
+  Scenario Outline:Login as a <usertype>
 
     When Log in as a "<usertype>"
     And user enters username "<username>"
@@ -19,21 +19,21 @@ Feature: Navport application login test
       | sales manager | salesmanager101 | UserUser123 | Dashboard       |
       | store manager | storemanager51  | UserUser123 | Dashboard       |
 
-
-  Scenario Outline:Log in as a user
+@NAV10-293
+  Scenario Outline:Login with invalid credentials
 
     When user enters invalid "<username>" and "<password>"
     And user clicks the login button
     Then warning "<message>" should be displayed
 
     Examples:
-      | username | password    | message                        |
+      | username | password    | message                       |
       | user11   | wrong       | Invalid user name or password. |
       | wrong    | UserUser123 | Invalid user name or password. |
       | wrong    | wrong       | Invalid user name or password. |
 
-
-  Scenario Outline: Username is empty
+@NAV10-295
+  Scenario Outline: Login without username
     When user enters invalid "<username>" and "<password>"
     And user clicks the login button
     Then warning message should be displayed
@@ -42,26 +42,26 @@ Feature: Navport application login test
       | username | password    |
       |          | UserUser123 |
 
-
-  Scenario Outline: Username and password is empty
+@NAV10-296
+  Scenario Outline: Login without username and password/password
 
     When user enters invalid "<username>" and "<password>"
     And user clicks the login button
-    Then warning "<message>" should be displayed
+    Then warning different message should be displayed
 
     Examples:
-      | username | password | message                    |
-      |          |          | Please fill in this field. |
-      | user11   |          | Please fill in this field. |
+      | username | password |
+      |          |          |
+      | user11   |          |
 
-  @wip
-  Scenario Outline:
+ @NAV10-297
+  Scenario Outline: User displays on his own name in the profile menu
 
     When Log in as a "<usertype>"
     And user enters username "<username>"
     And user enters password "<password>"
     And user clicks the login button
-    Then user sees on his own "<username>"
+    Then user displays on his own "<username>"
 
     Examples:
       | usertype      | username        | password    | username        |
