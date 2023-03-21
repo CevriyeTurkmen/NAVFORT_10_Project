@@ -26,6 +26,12 @@ public class LoginPage {
     @FindBy(xpath = "//h1[@class='oro-subtitle']")
     public WebElement header;
 
+    @FindBy(xpath = "//div[@class=\"alert alert-error\"]/div")
+    public WebElement message;
+
+    @FindBy (xpath = "//a[@href='javascript: void(0);']")
+    public WebElement profile;
+
 
 
 }
