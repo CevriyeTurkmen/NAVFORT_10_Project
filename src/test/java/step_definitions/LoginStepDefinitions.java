@@ -96,7 +96,7 @@ public class LoginStepDefinitions {
     }
 
     @Then("user displays on his own {string}")
-    public void userDisplaysOnHisOwn(String username) throws InterruptedException {
+    public void userDisplaysOnHisOwn(String username) {
 
        Browser_Util.waitForVisibility(loginPage.profile, 5);
        String expectedProfile = username;
