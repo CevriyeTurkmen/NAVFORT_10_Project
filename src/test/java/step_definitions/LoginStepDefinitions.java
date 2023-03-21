@@ -101,9 +101,8 @@ public class LoginStepDefinitions {
        Browser_Util.waitForVisibility(loginPage.profile, 5);
        String expectedProfile = username;
        String actualProfile = loginPage.profile.getText();
-        Assert.assertEquals(expectedProfile, actualProfile);
+       Assert.assertEquals(expectedProfile, actualProfile);
 
     }
-
 
 }
