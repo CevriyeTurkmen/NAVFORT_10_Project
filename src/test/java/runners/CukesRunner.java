@@ -13,8 +13,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "step_definitions",
         dryRun = false,
-        tags = "@NAV10-297"
+        tags = "@NAV10-382"
 )
+
 
 
 public class CukesRunner {

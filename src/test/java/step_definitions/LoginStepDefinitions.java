@@ -44,9 +44,11 @@ public class LoginStepDefinitions {
     }
 
     @When("user clicks the login button")
-    public void user_clicks_the_login_button() {
+    public void user_clicks_the_login_button() throws InterruptedException {
         loginPage.submitBtn.click();
+        Thread.sleep(3000);
     }
+
 
     @Then("user lands on the {string} page")
     public void user_lands_on_the_page(String page) throws InterruptedException {

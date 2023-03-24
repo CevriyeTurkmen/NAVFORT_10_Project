@@ -1,3 +1,4 @@
+@NAV10-382
 Feature: Navfort_E10 login test
 
   Background:
