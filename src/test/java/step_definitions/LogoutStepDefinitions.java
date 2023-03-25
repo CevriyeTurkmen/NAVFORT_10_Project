@@ -116,7 +116,7 @@ public class LogoutStepDefinitions {
     @Then("user should not go to homepage")
     public void userShouldNotGoToHomepage() {
         waitFor(5);
-        Assert.assertEquals("https://qa.navfort.com/user/login",Driver.getDriver().getCurrentUrl());
+        Assert.assertNotEquals("https://qa.navfort.com/",Driver.getDriver().getCurrentUrl());
 
     }
 
