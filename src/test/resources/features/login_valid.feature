@@ -69,3 +69,5 @@ Feature: Navfort_E10 login test
       | driver        | user1           | UserUser123 | user1           |
       | sales manager | salesmanager101 | UserUser123 | salesmanager101 |
       | store manager | storemanager51  | UserUser123 | storemanager51  |
+
+
